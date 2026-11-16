@@ -1,410 +1,570 @@
-// NokiaPhone.java
-// My Nokia 5510 menu map program.
-// Every menu item has a number path like "6-1-2" (Settings > Call settings > Speed dialling)
-
 import java.util.Scanner;
 
-public class NokiaPhone {
-    private String model;
-    private boolean quit;     // turns true when the user types 99
-    private Scanner input = new Scanner(System.in);
-
-    public NokiaPhone(String model) {
-        this.model = model;
-        quit = false;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
+public class NokiaMenu {
     public static void main(String[] args) {
-        NokiaPhone myPhone = new NokiaPhone("Nokia 5510");
-        myPhone.start();
-    }
+        Scanner input = new Scanner(System.in);
 
-    public void start() {
-        System.out.printf("Welcome to the %s menu.%n", getModel());
-        mainMenu();
-        System.out.println("Back to standby mode.");
-    }
-
-    // main menu (15 items)
-    private void mainMenu() {
-        int choice;
-
-        do {
-            showMenu("", 15);
-            choice = readChoice(15);
-
-            switch (choice) {
-                case 0:
-                    break;
-                case 1:
-                    phoneBookMenu();
-                    break;
-                case 2:
-                    messagesMenu();
-                    break;
-                case 4:
-                    callRegisterMenu();
-                    break;
-                case 5:
-                    simpleMenu("5", 8);     // Tones
-                    break;
-                case 6:
-                    settingsMenu();
-                    break;
-                case 8:
-                    simpleMenu("8", 4);     // Music
-                    break;
-                case 12:
-                    simpleMenu("12", 6);    // Clock
-                    break;
-                default:
-                    runFunction("" + choice);
-                    break;
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // 1 Phone book
-    private void phoneBookMenu() {
-        int choice;
-
-        do {
-            showMenu("1", 11);
-            choice = readChoice(11);
-
-            if (choice == 9) {
-                simpleMenu("1-9", 3);       // Options
-            } else if (choice != 0) {
-                runFunction("1-" + choice);
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // 2 Messages
-    private void messagesMenu() {
-        int choice;
-
-        do {
-            showMenu("2", 10);
-            choice = readChoice(10);
-
-            if (choice == 7) {
-                messageSettingsMenu();
-            } else if (choice != 0) {
-                runFunction("2-" + choice);
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // 2-7 Message settings
-    private void messageSettingsMenu() {
-        int choice;
-
-        do {
-            showMenu("2-7", 2);
-            choice = readChoice(2);
-
-            if (choice == 1) {
-                simpleMenu("2-7-1", 3);     // Set 1
-            } else if (choice == 2) {
-                simpleMenu("2-7-2", 3);     // Common
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // 4 Call register
-    private void callRegisterMenu() {
-        int choice;
-
-        do {
-            showMenu("4", 8);
-            choice = readChoice(8);
-
-            switch (choice) {
-                case 0:
-                    break;
-                case 5:
-                    simpleMenu("4-5", 5);   // Show call duration
-                    break;
-                case 6:
-                    simpleMenu("4-6", 3);   // Show call costs
-                    break;
-                case 7:
-                    simpleMenu("4-7", 2);   // Call cost settings
-                    break;
-                default:
-                    runFunction("4-" + choice);
-                    break;
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // 6 Settings
-    private void settingsMenu() {
-        int choice;
-
-        do {
-            showMenu("6", 4);
-            choice = readChoice(4);
-
-            switch (choice) {
-                case 0:
-                    break;
-                case 1:
-                    simpleMenu("6-1", 6);   // Call settings
-                    break;
-                case 2:
-                    simpleMenu("6-2", 5);   // Phone settings
-                    break;
-                case 3:
-                    simpleMenu("6-3", 6);   // Security settings
-                    break;
-                default:
-                    runFunction("6-" + choice);
-                    break;
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // a menu where every item is a real function, no more submenus
-    private void simpleMenu(String menuPath, int count) {
-        int choice;
-
-        do {
-            showMenu(menuPath, count);
-            choice = readChoice(count);
-
-            if (choice != 0) {
-                runFunction(menuPath + "-" + choice);
-            }
-        } while (choice != 0 && !quit);
-    }
-
-    // prints a menu with its title and all the items
-    private void showMenu(String menuPath, int count) {
         System.out.println();
-        System.out.println("==============================");
+        System.out.println("--- NOKIA 5510 MAIN MENU ---");
+        System.out.println("1. Phone book");
+        System.out.println("2. Messages");
+        System.out.println("3. Chat");
+        System.out.println("4. Call register");
+        System.out.println("5. Tones");
+        System.out.println("6. Settings");
+        System.out.println("7. Call divert");
+        System.out.println("8. Music");
+        System.out.println("9. Games");
+        System.out.println("10. Calculator");
+        System.out.println("11. Reminders");
+        System.out.println("12. Clock");
+        System.out.println("13. Profiles");
+        System.out.println("14. Services");
+        System.out.println("15. SIM services");
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
 
-        if (menuPath.equals("")) {
-            System.out.println(" MAIN MENU");
-        } else {
-            System.out.printf(" %s  %s%n", menuPath, itemName(menuPath).toUpperCase());
-        }
+        switch (choice) {
+            case 1:
+                System.out.println();
+                System.out.println("--- PHONE BOOK ---");
+                System.out.println("1. Search");
+                System.out.println("2. Service Nos.");
+                System.out.println("3. Add name");
+                System.out.println("4. Erase");
+                System.out.println("5. Edit");
+                System.out.println("6. Copy");
+                System.out.println("7. Assign tone");
+                System.out.println("8. Send b'card");
+                System.out.println("9. Options");
+                System.out.println("10. Speed dials");
+                System.out.println("11. Voice tags");
+                System.out.print("Enter your choice: ");
+                int choice_1 = input.nextInt();
 
-        System.out.println("==============================");
+                switch (choice_1) {
+                    case 1:
+                        System.out.println("You selected: Search (shortcut 1-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Service Nos. (shortcut 1-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Add name (shortcut 1-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Erase (shortcut 1-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Edit (shortcut 1-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Copy (shortcut 1-6)");
+                        break;
+                    case 7:
+                        System.out.println("You selected: Assign tone (shortcut 1-7)");
+                        break;
+                    case 8:
+                        System.out.println("You selected: Send b'card (shortcut 1-8)");
+                        break;
+                    case 9:
+                        System.out.println();
+                        System.out.println("--- OPTIONS ---");
+                        System.out.println("1. Memory in use");
+                        System.out.println("2. Type of view");
+                        System.out.println("3. Memory status");
+                        System.out.print("Enter your choice: ");
+                        int choice_1_9 = input.nextInt();
 
-        for (int i = 1; i <= count; i++) {
-            String path = makePath(menuPath, i);
-
-            if (hasSubmenu(path)) {
-                printItem(i, itemName(path), true);
-            } else {
-                printItem(i, itemName(path));
-            }
-        }
-    }
-
-    // prints one item (normal item)
-    private void printItem(int number, String name) {
-        System.out.printf("  %2d. %s%n", number, name);
-    }
-
-    // prints one item, adds ... if it has a submenu
-    private void printItem(int number, String name, boolean submenu) {
-        if (submenu) {
-            System.out.printf("  %2d. %s ...%n", number, name);
-        } else {
-            printItem(number, name);
-        }
-    }
-
-    // ("6-1", 2) gives "6-1-2"
-    private String makePath(String menuPath, int number) {
-        if (menuPath.equals("")) {
-            return "" + number;
-        }
-        return menuPath + "-" + number;
-    }
-
-    // asks for a number until the user types a good one
-    // 0 = back, 99 = exit everything
-    private int readChoice(int count) {
-        int choice = 0;
-        boolean ok = false;
-
-        while (!ok) {
-            System.out.print("Item number (0 = back, 99 = exit): ");
-
-            if (input.hasNextInt()) {
-                choice = input.nextInt();
-
-                if (choice == 99) {
-                    quit = true;
-                    choice = 0;
-                    ok = true;
-                } else if (choice >= 0 && choice <= count) {
-                    ok = true;
-                } else {
-                    System.out.printf("Enter a number from 0 to %d.%n", count);
+                        switch (choice_1_9) {
+                            case 1:
+                                System.out.println("You selected: Memory in use (shortcut 1-9-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Type of view (shortcut 1-9-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Memory status (shortcut 1-9-3)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 10:
+                        System.out.println("You selected: Speed dials (shortcut 1-10)");
+                        break;
+                    case 11:
+                        System.out.println("You selected: Voice tags (shortcut 1-11)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
-            } else {
-                input.next();   // skip the wrong input
-                System.out.println("Enter a number please.");
-            }
-        }
+                break;
+            case 2:
+                System.out.println();
+                System.out.println("--- MESSAGES ---");
+                System.out.println("1. Write messages");
+                System.out.println("2. Inbox");
+                System.out.println("3. Outbox");
+                System.out.println("4. Picture messages");
+                System.out.println("5. Templates");
+                System.out.println("6. Smileys");
+                System.out.println("7. Message settings");
+                System.out.println("8. Info service");
+                System.out.println("9. Voice mailbox number");
+                System.out.println("10. Service command editor");
+                System.out.print("Enter your choice: ");
+                int choice_2 = input.nextInt();
 
-        return choice;
-    }
+                switch (choice_2) {
+                    case 1:
+                        System.out.println("You selected: Write messages (shortcut 2-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Inbox (shortcut 2-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Outbox (shortcut 2-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Picture messages (shortcut 2-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Templates (shortcut 2-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Smileys (shortcut 2-6)");
+                        break;
+                    case 7:
+                        System.out.println();
+                        System.out.println("--- MESSAGE SETTINGS ---");
+                        System.out.println("1. Set 1");
+                        System.out.println("2. Common");
+                        System.out.print("Enter your choice: ");
+                        int choice_2_7 = input.nextInt();
 
-    // what happens when you pick a real function
-    private void runFunction(String path) {
-        System.out.printf("%n*** %s ***  (shortcut %s)%n", itemName(path), path);
-        System.out.println("(function would run here)");
-    }
+                        switch (choice_2_7) {
+                            case 1:
+                                System.out.println();
+                                System.out.println("--- SET 1 ---");
+                                System.out.println("1. Message centre number");
+                                System.out.println("2. Messages sent as");
+                                System.out.println("3. Message validity");
+                                System.out.print("Enter your choice: ");
+                                int choice_2_7_1 = input.nextInt();
 
-    // the menu map: path -> name
-    private String itemName(String path) {
-        switch (path) {
-            // Phone book
-            case "1":       return "Phone book";
-            case "1-1":     return "Search";
-            case "1-2":     return "Service Nos.";
-            case "1-3":     return "Add name";
-            case "1-4":     return "Erase";
-            case "1-5":     return "Edit";
-            case "1-6":     return "Copy";
-            case "1-7":     return "Assign tone";
-            case "1-8":     return "Send b'card";
-            case "1-9":     return "Options";
-            case "1-9-1":   return "Memory in use";
-            case "1-9-2":   return "Type of view";
-            case "1-9-3":   return "Memory status";
-            case "1-10":    return "Speed dials";
-            case "1-11":    return "Voice tags";
+                                switch (choice_2_7_1) {
+                                    case 1:
+                                        System.out.println("You selected: Message centre number (shortcut 2-7-1-1)");
+                                        break;
+                                    case 2:
+                                        System.out.println("You selected: Messages sent as (shortcut 2-7-1-2)");
+                                        break;
+                                    case 3:
+                                        System.out.println("You selected: Message validity (shortcut 2-7-1-3)");
+                                        break;
+                                    default:
+                                        System.out.println("Invalid choice.");
+                                }
+                                break;
+                            case 2:
+                                System.out.println();
+                                System.out.println("--- COMMON ---");
+                                System.out.println("1. Delivery reports");
+                                System.out.println("2. Reply via same centre");
+                                System.out.println("3. Character support");
+                                System.out.print("Enter your choice: ");
+                                int choice_2_7_2 = input.nextInt();
 
-            // Messages
-            case "2":       return "Messages";
-            case "2-1":     return "Write messages";
-            case "2-2":     return "Inbox";
-            case "2-3":     return "Outbox";
-            case "2-4":     return "Picture messages";
-            case "2-5":     return "Templates";
-            case "2-6":     return "Smileys";
-            case "2-7":     return "Message settings";
-            case "2-7-1":   return "Set 1";
-            case "2-7-1-1": return "Message centre number";
-            case "2-7-1-2": return "Messages sent as";
-            case "2-7-1-3": return "Message validity";
-            case "2-7-2":   return "Common";
-            case "2-7-2-1": return "Delivery reports";
-            case "2-7-2-2": return "Reply via same centre";
-            case "2-7-2-3": return "Character support";
-            case "2-8":     return "Info service";
-            case "2-9":     return "Voice mailbox number";
-            case "2-10":    return "Service command editor";
+                                switch (choice_2_7_2) {
+                                    case 1:
+                                        System.out.println("You selected: Delivery reports (shortcut 2-7-2-1)");
+                                        break;
+                                    case 2:
+                                        System.out.println("You selected: Reply via same centre (shortcut 2-7-2-2)");
+                                        break;
+                                    case 3:
+                                        System.out.println("You selected: Character support (shortcut 2-7-2-3)");
+                                        break;
+                                    default:
+                                        System.out.println("Invalid choice.");
+                                }
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 8:
+                        System.out.println("You selected: Info service (shortcut 2-8)");
+                        break;
+                    case 9:
+                        System.out.println("You selected: Voice mailbox number (shortcut 2-9)");
+                        break;
+                    case 10:
+                        System.out.println("You selected: Service command editor (shortcut 2-10)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 3:
+                System.out.println("You selected: Chat (shortcut 3)");
+                break;
+            case 4:
+                System.out.println();
+                System.out.println("--- CALL REGISTER ---");
+                System.out.println("1. Missed calls");
+                System.out.println("2. Received calls");
+                System.out.println("3. Dialled numbers");
+                System.out.println("4. Erase recent call lists");
+                System.out.println("5. Show call duration");
+                System.out.println("6. Show call costs");
+                System.out.println("7. Call cost settings");
+                System.out.println("8. Prepaid credit");
+                System.out.print("Enter your choice: ");
+                int choice_4 = input.nextInt();
 
-            // Chat
-            case "3":       return "Chat";
+                switch (choice_4) {
+                    case 1:
+                        System.out.println("You selected: Missed calls (shortcut 4-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Received calls (shortcut 4-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Dialled numbers (shortcut 4-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Erase recent call lists (shortcut 4-4)");
+                        break;
+                    case 5:
+                        System.out.println();
+                        System.out.println("--- SHOW CALL DURATION ---");
+                        System.out.println("1. Last call duration");
+                        System.out.println("2. All calls' duration");
+                        System.out.println("3. Received calls' duration");
+                        System.out.println("4. Dialled calls' duration");
+                        System.out.println("5. Clear timers");
+                        System.out.print("Enter your choice: ");
+                        int choice_4_5 = input.nextInt();
 
-            // Call register
-            case "4":       return "Call register";
-            case "4-1":     return "Missed calls";
-            case "4-2":     return "Received calls";
-            case "4-3":     return "Dialed numbers";
-            case "4-4":     return "Erase recent call lists";
-            case "4-5":     return "Show call duration";
-            case "4-5-1":   return "Last call duration";
-            case "4-5-2":   return "All calls' duration";
-            case "4-5-3":   return "Received calls' duration";
-            case "4-5-4":   return "Dialed calls' duration";
-            case "4-5-5":   return "Clear timers";
-            case "4-6":     return "Show call costs";
-            case "4-6-1":   return "Last call cost";
-            case "4-6-2":   return "All calls' cost";
-            case "4-6-3":   return "Clear counters";
-            case "4-7":     return "Call cost settings";
-            case "4-7-1":   return "Call cost limit";
-            case "4-7-2":   return "Show costs in";
-            case "4-8":     return "Prepaid credit";
+                        switch (choice_4_5) {
+                            case 1:
+                                System.out.println("You selected: Last call duration (shortcut 4-5-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: All calls' duration (shortcut 4-5-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Received calls' duration (shortcut 4-5-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Dialled calls' duration (shortcut 4-5-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Clear timers (shortcut 4-5-5)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 6:
+                        System.out.println();
+                        System.out.println("--- SHOW CALL COSTS ---");
+                        System.out.println("1. Last call cost");
+                        System.out.println("2. All calls' cost");
+                        System.out.println("3. Clear counters");
+                        System.out.print("Enter your choice: ");
+                        int choice_4_6 = input.nextInt();
 
-            // Tones
-            case "5":       return "Tones";
-            case "5-1":     return "Ringing tone";
-            case "5-2":     return "Ringing volume";
-            case "5-3":     return "Incoming call alert";
-            case "5-4":     return "Message alert tone";
-            case "5-5":     return "Keypad tones";
-            case "5-6":     return "Warning tones";
-            case "5-7":     return "Vibrating alert";
-            case "5-8":     return "Screen saver";
+                        switch (choice_4_6) {
+                            case 1:
+                                System.out.println("You selected: Last call cost (shortcut 4-6-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: All calls' cost (shortcut 4-6-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Clear counters (shortcut 4-6-3)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 7:
+                        System.out.println();
+                        System.out.println("--- CALL COST SETTINGS ---");
+                        System.out.println("1. Call cost limit");
+                        System.out.println("2. Show costs in");
+                        System.out.print("Enter your choice: ");
+                        int choice_4_7 = input.nextInt();
 
-            // Settings
-            case "6":       return "Settings";
-            case "6-1":     return "Call settings";
-            case "6-1-1":   return "Automatic redial";
-            case "6-1-2":   return "Speed dialing";
-            case "6-1-3":   return "Call waiting options";
-            case "6-1-4":   return "Own number sending";
-            case "6-1-5":   return "Phone line in use";
-            case "6-1-6":   return "Automatic answer";
-            case "6-2":     return "Phone settings";
-            case "6-2-1":   return "Language";
-            case "6-2-2":   return "Cell info display";
-            case "6-2-3":   return "Welcome note";
-            case "6-2-4":   return "Network selection";
-            case "6-2-5":   return "Confirm SIM service actions";
-            case "6-3":     return "Security settings";
-            case "6-3-1":   return "PIN code request";
-            case "6-3-2":   return "Call barring service";
-            case "6-3-3":   return "Fixed dialing";
-            case "6-3-4":   return "Closed user group";
-            case "6-3-5":   return "Security level";
-            case "6-3-6":   return "Change access codes";
-            case "6-4":     return "Restore factory settings";
+                        switch (choice_4_7) {
+                            case 1:
+                                System.out.println("You selected: Call cost limit (shortcut 4-7-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Show costs in (shortcut 4-7-2)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 8:
+                        System.out.println("You selected: Prepaid credit (shortcut 4-8)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 5:
+                System.out.println();
+                System.out.println("--- TONES ---");
+                System.out.println("1. Ringing tone");
+                System.out.println("2. Ringing volume");
+                System.out.println("3. Incoming call alert");
+                System.out.println("4. Message alert tone");
+                System.out.println("5. Keypad tones");
+                System.out.println("6. Warning tones");
+                System.out.println("7. Vibrating alert");
+                System.out.println("8. Screen saver");
+                System.out.print("Enter your choice: ");
+                int choice_5 = input.nextInt();
 
-            // 7 to 15
-            case "7":       return "Call divert";
-            case "8":       return "Music";
-            case "8-1":     return "Music player";
-            case "8-2":     return "Radio";
-            case "8-3":     return "Recorder";
-            case "8-4":     return "Track list";
-            case "9":       return "Games";
-            case "10":      return "Calculator";
-            case "11":      return "Reminders";
-            case "12":      return "Clock";
-            case "12-1":    return "Alarm clock";
-            case "12-2":    return "Clock settings";
-            case "12-3":    return "Date setting";
-            case "12-4":    return "Stopwatch";
-            case "12-5":    return "Countdown timer";
-            case "12-6":    return "Auto update of date and time";
-            case "13":      return "Profiles";
-            case "14":      return "Services";
-            case "15":      return "SIM services";
+                switch (choice_5) {
+                    case 1:
+                        System.out.println("You selected: Ringing tone (shortcut 5-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Ringing volume (shortcut 5-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Incoming call alert (shortcut 5-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Message alert tone (shortcut 5-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Keypad tones (shortcut 5-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Warning tones (shortcut 5-6)");
+                        break;
+                    case 7:
+                        System.out.println("You selected: Vibrating alert (shortcut 5-7)");
+                        break;
+                    case 8:
+                        System.out.println("You selected: Screen saver (shortcut 5-8)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 6:
+                System.out.println();
+                System.out.println("--- SETTINGS ---");
+                System.out.println("1. Call settings");
+                System.out.println("2. Phone settings");
+                System.out.println("3. Security settings");
+                System.out.println("4. Restore factory settings");
+                System.out.print("Enter your choice: ");
+                int choice_6 = input.nextInt();
 
-            default:        return "";
-        }
-    }
+                switch (choice_6) {
+                    case 1:
+                        System.out.println();
+                        System.out.println("--- CALL SETTINGS ---");
+                        System.out.println("1. Automatic redial");
+                        System.out.println("2. Speed dialling");
+                        System.out.println("3. Call waiting options");
+                        System.out.println("4. Own number sending");
+                        System.out.println("5. Phone line in use");
+                        System.out.println("6. Automatic answer");
+                        System.out.print("Enter your choice: ");
+                        int choice_6_1 = input.nextInt();
 
-    // true if this item opens another menu
-    private boolean hasSubmenu(String path) {
-        switch (path) {
-            case "1": case "2": case "4": case "5": case "6": case "8": case "12":
-            case "1-9":
-            case "2-7": case "2-7-1": case "2-7-2":
-            case "4-5": case "4-6": case "4-7":
-            case "6-1": case "6-2": case "6-3":
-                return true;
+                        switch (choice_6_1) {
+                            case 1:
+                                System.out.println("You selected: Automatic redial (shortcut 6-1-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Speed dialling (shortcut 6-1-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Call waiting options (shortcut 6-1-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Own number sending (shortcut 6-1-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Phone line in use (shortcut 6-1-5)");
+                                break;
+                            case 6:
+                                System.out.println("You selected: Automatic answer (shortcut 6-1-6)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 2:
+                        System.out.println();
+                        System.out.println("--- PHONE SETTINGS ---");
+                        System.out.println("1. Language");
+                        System.out.println("2. Cell info display");
+                        System.out.println("3. Welcome note");
+                        System.out.println("4. Network selection");
+                        System.out.println("5. Confirm SIM service actions");
+                        System.out.print("Enter your choice: ");
+                        int choice_6_2 = input.nextInt();
+
+                        switch (choice_6_2) {
+                            case 1:
+                                System.out.println("You selected: Language (shortcut 6-2-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Cell info display (shortcut 6-2-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Welcome note (shortcut 6-2-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Network selection (shortcut 6-2-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Confirm SIM service actions (shortcut 6-2-5)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println();
+                        System.out.println("--- SECURITY SETTINGS ---");
+                        System.out.println("1. PIN code request");
+                        System.out.println("2. Call barring service");
+                        System.out.println("3. Fixed dialling");
+                        System.out.println("4. Closed user group");
+                        System.out.println("5. Security level");
+                        System.out.println("6. Change access codes");
+                        System.out.print("Enter your choice: ");
+                        int choice_6_3 = input.nextInt();
+
+                        switch (choice_6_3) {
+                            case 1:
+                                System.out.println("You selected: PIN code request (shortcut 6-3-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Call barring service (shortcut 6-3-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Fixed dialling (shortcut 6-3-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Closed user group (shortcut 6-3-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Security level (shortcut 6-3-5)");
+                                break;
+                            case 6:
+                                System.out.println("You selected: Change access codes (shortcut 6-3-6)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 4:
+                        System.out.println("You selected: Restore factory settings (shortcut 6-4)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 7:
+                System.out.println("You selected: Call divert (shortcut 7)");
+                break;
+            case 8:
+                System.out.println();
+                System.out.println("--- MUSIC ---");
+                System.out.println("1. Music player");
+                System.out.println("2. Radio");
+                System.out.println("3. Recorder");
+                System.out.println("4. Track list");
+                System.out.print("Enter your choice: ");
+                int choice_8 = input.nextInt();
+
+                switch (choice_8) {
+                    case 1:
+                        System.out.println("You selected: Music player (shortcut 8-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Radio (shortcut 8-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Recorder (shortcut 8-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Track list (shortcut 8-4)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 9:
+                System.out.println("You selected: Games (shortcut 9)");
+                break;
+            case 10:
+                System.out.println("You selected: Calculator (shortcut 10)");
+                break;
+            case 11:
+                System.out.println("You selected: Reminders (shortcut 11)");
+                break;
+            case 12:
+                System.out.println();
+                System.out.println("--- CLOCK ---");
+                System.out.println("1. Alarm clock");
+                System.out.println("2. Clock settings");
+                System.out.println("3. Date setting");
+                System.out.println("4. Stopwatch");
+                System.out.println("5. Countdown timer");
+                System.out.println("6. Auto update of date and time");
+                System.out.print("Enter your choice: ");
+                int choice_12 = input.nextInt();
+
+                switch (choice_12) {
+                    case 1:
+                        System.out.println("You selected: Alarm clock (shortcut 12-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Clock settings (shortcut 12-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Date setting (shortcut 12-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Stopwatch (shortcut 12-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Countdown timer (shortcut 12-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Auto update of date and time (shortcut 12-6)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 13:
+                System.out.println("You selected: Profiles (shortcut 13)");
+                break;
+            case 14:
+                System.out.println("You selected: Services (shortcut 14)");
+                break;
+            case 15:
+                System.out.println("You selected: SIM services (shortcut 15)");
+                break;
             default:
-                return false;
+                System.out.println("Invalid choice.");
         }
-    }
-}// NokiaPhone.java
-// My Nokia 5510 menu map program.
-// Every menu item has a number path like "6-1-2" (Settings > Call settings > Speed dialling)
 
+    }
+}
