@@ -44,28 +44,28 @@ public class NokiaMenu {
 
                 switch (choice_1) {
                     case 1:
-                        System.out.println("You selected: Search (shortcut 1-1)");
+                        System.out.println("You selected: Search");
                         break;
                     case 2:
-                        System.out.println("You selected: Service Nos. (shortcut 1-2)");
+                        System.out.println("You selected: Service Nos.");
                         break;
                     case 3:
-                        System.out.println("You selected: Add name (shortcut 1-3)");
+                        System.out.println("You selected: Add name");
                         break;
                     case 4:
-                        System.out.println("You selected: Erase (shortcut 1-4)");
+                        System.out.println("You selected: Erase");
                         break;
                     case 5:
-                        System.out.println("You selected: Edit (shortcut 1-5)");
+                        System.out.println("You selected: Edit");
                         break;
                     case 6:
-                        System.out.println("You selected: Copy (shortcut 1-6)");
+                        System.out.println("You selected: Copy");
                         break;
                     case 7:
-                        System.out.println("You selected: Assign tone (shortcut 1-7)");
+                        System.out.println("You selected: Assign tone");
                         break;
                     case 8:
-                        System.out.println("You selected: Send b'card (shortcut 1-8)");
+                        System.out.println("You selected: Send b'card");
                         break;
                     case 9:
                         System.out.println();
@@ -78,23 +78,23 @@ public class NokiaMenu {
 
                         switch (choice_1_9) {
                             case 1:
-                                System.out.println("You selected: Memory in use (shortcut 1-9-1)");
+                                System.out.println("You selected: Memory in use");
                                 break;
                             case 2:
-                                System.out.println("You selected: Type of view (shortcut 1-9-2)");
+                                System.out.println("You selected: Type of view");
                                 break;
                             case 3:
-                                System.out.println("You selected: Memory status (shortcut 1-9-3)");
+                                System.out.println("You selected: Memory status");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
                         }
                         break;
                     case 10:
-                        System.out.println("You selected: Speed dials (shortcut 1-10)");
+                        System.out.println("You selected: Speed dials");
                         break;
                     case 11:
-                        System.out.println("You selected: Voice tags (shortcut 1-11)");
+                        System.out.println("You selected: Voice tags");
                         break;
                     default:
                         System.out.println("Invalid choice.");
@@ -118,22 +118,22 @@ public class NokiaMenu {
 
                 switch (choice_2) {
                     case 1:
-                        System.out.println("You selected: Write messages (shortcut 2-1)");
+                        System.out.println("You selected: Write messages");
                         break;
                     case 2:
-                        System.out.println("You selected: Inbox (shortcut 2-2)");
+                        System.out.println("You selected: Inbox");
                         break;
                     case 3:
-                        System.out.println("You selected: Outbox (shortcut 2-3)");
+                        System.out.println("You selected: Outbox");
                         break;
                     case 4:
-                        System.out.println("You selected: Picture messages (shortcut 2-4)");
+                        System.out.println("You selected: Picture messages");
                         break;
                     case 5:
-                        System.out.println("You selected: Templates (shortcut 2-5)");
+                        System.out.println("You selected: Templates");
                         break;
                     case 6:
-                        System.out.println("You selected: Smileys (shortcut 2-6)");
+                        System.out.println("You selected: Smileys");
                         break;
                     case 7:
                         System.out.println();
@@ -155,13 +155,13 @@ public class NokiaMenu {
 
                                 switch (choice_2_7_1) {
                                     case 1:
-                                        System.out.println("You selected: Message centre number (shortcut 2-7-1-1)");
+                                        System.out.println("You selected: Message centre number");
                                         break;
                                     case 2:
-                                        System.out.println("You selected: Messages sent as (shortcut 2-7-1-2)");
+                                        System.out.println("You selected: Messages sent as");
                                         break;
                                     case 3:
-                                        System.out.println("You selected: Message validity (shortcut 2-7-1-3)");
+                                        System.out.println("You selected: Message validity");
                                         break;
                                     default:
                                         System.out.println("Invalid choice.");
@@ -178,13 +178,13 @@ public class NokiaMenu {
 
                                 switch (choice_2_7_2) {
                                     case 1:
-                                        System.out.println("You selected: Delivery reports (shortcut 2-7-2-1)");
+                                        System.out.println("You selected: Delivery reports");
                                         break;
                                     case 2:
-                                        System.out.println("You selected: Reply via same centre (shortcut 2-7-2-2)");
+                                        System.out.println("You selected: Reply via same centre");
                                         break;
                                     case 3:
-                                        System.out.println("You selected: Character support (shortcut 2-7-2-3)");
+                                        System.out.println("You selected: Character support");
                                         break;
                                     default:
                                         System.out.println("Invalid choice.");
@@ -195,20 +195,20 @@ public class NokiaMenu {
                         }
                         break;
                     case 8:
-                        System.out.println("You selected: Info service (shortcut 2-8)");
+                        System.out.println("You selected: Info service");
                         break;
                     case 9:
-                        System.out.println("You selected: Voice mailbox number (shortcut 2-9)");
+                        System.out.println("You selected: Voice mailbox number");
                         break;
                     case 10:
-                        System.out.println("You selected: Service command editor (shortcut 2-10)");
+                        System.out.println("You selected: Service command editor");
                         break;
                     default:
                         System.out.println("Invalid choice.");
                 }
                 break;
             case 3:
-                System.out.println("You selected: Chat (shortcut 3)");
+                System.out.println("You selected: Chat");
                 break;
             case 4:
                 System.out.println();
@@ -226,16 +226,16 @@ public class NokiaMenu {
 
                 switch (choice_4) {
                     case 1:
-                        System.out.println("You selected: Missed calls (shortcut 4-1)");
+                        System.out.println("You selected: Missed calls");
                         break;
                     case 2:
-                        System.out.println("You selected: Received calls (shortcut 4-2)");
+                        System.out.println("You selected: Received calls");
                         break;
                     case 3:
-                        System.out.println("You selected: Dialled numbers (shortcut 4-3)");
+                        System.out.println("You selected: Dialled numbers");
                         break;
                     case 4:
-                        System.out.println("You selected: Erase recent call lists (shortcut 4-4)");
+                        System.out.println("You selected: Erase recent call lists");
                         break;
                     case 5:
                         System.out.println();
@@ -250,19 +250,19 @@ public class NokiaMenu {
 
                         switch (choice_4_5) {
                             case 1:
-                                System.out.println("You selected: Last call duration (shortcut 4-5-1)");
+                                System.out.println("You selected: Last call duration");
                                 break;
                             case 2:
-                                System.out.println("You selected: All calls' duration (shortcut 4-5-2)");
+                                System.out.println("You selected: All calls' duration");
                                 break;
                             case 3:
-                                System.out.println("You selected: Received calls' duration (shortcut 4-5-3)");
+                                System.out.println("You selected: Received calls' duration");
                                 break;
                             case 4:
-                                System.out.println("You selected: Dialled calls' duration (shortcut 4-5-4)");
+                                System.out.println("You selected: Dialled calls' duration");
                                 break;
                             case 5:
-                                System.out.println("You selected: Clear timers (shortcut 4-5-5)");
+                                System.out.println("You selected: Clear timers");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
@@ -279,13 +279,13 @@ public class NokiaMenu {
 
                         switch (choice_4_6) {
                             case 1:
-                                System.out.println("You selected: Last call cost (shortcut 4-6-1)");
+                                System.out.println("You selected: Last call cost");
                                 break;
                             case 2:
-                                System.out.println("You selected: All calls' cost (shortcut 4-6-2)");
+                                System.out.println("You selected: All calls' cost");
                                 break;
                             case 3:
-                                System.out.println("You selected: Clear counters (shortcut 4-6-3)");
+                                System.out.println("You selected: Clear counters");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
@@ -301,17 +301,17 @@ public class NokiaMenu {
 
                         switch (choice_4_7) {
                             case 1:
-                                System.out.println("You selected: Call cost limit (shortcut 4-7-1)");
+                                System.out.println("You selected: Call cost limit");
                                 break;
                             case 2:
-                                System.out.println("You selected: Show costs in (shortcut 4-7-2)");
+                                System.out.println("You selected: Show costs in");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
                         }
                         break;
                     case 8:
-                        System.out.println("You selected: Prepaid credit (shortcut 4-8)");
+                        System.out.println("You selected: Prepaid credit");
                         break;
                     default:
                         System.out.println("Invalid choice.");
@@ -333,28 +333,28 @@ public class NokiaMenu {
 
                 switch (choice_5) {
                     case 1:
-                        System.out.println("You selected: Ringing tone (shortcut 5-1)");
+                        System.out.println("You selected: Ringing tone");
                         break;
                     case 2:
-                        System.out.println("You selected: Ringing volume (shortcut 5-2)");
+                        System.out.println("You selected: Ringing volume");
                         break;
                     case 3:
-                        System.out.println("You selected: Incoming call alert (shortcut 5-3)");
+                        System.out.println("You selected: Incoming call alert");
                         break;
                     case 4:
-                        System.out.println("You selected: Message alert tone (shortcut 5-4)");
+                        System.out.println("You selected: Message alert tone");
                         break;
                     case 5:
-                        System.out.println("You selected: Keypad tones (shortcut 5-5)");
+                        System.out.println("You selected: Keypad tones");
                         break;
                     case 6:
-                        System.out.println("You selected: Warning tones (shortcut 5-6)");
+                        System.out.println("You selected: Warning tones");
                         break;
                     case 7:
-                        System.out.println("You selected: Vibrating alert (shortcut 5-7)");
+                        System.out.println("You selected: Vibrating alert");
                         break;
                     case 8:
-                        System.out.println("You selected: Screen saver (shortcut 5-8)");
+                        System.out.println("You selected: Screen saver");
                         break;
                     default:
                         System.out.println("Invalid choice.");
@@ -385,22 +385,22 @@ public class NokiaMenu {
 
                         switch (choice_6_1) {
                             case 1:
-                                System.out.println("You selected: Automatic redial (shortcut 6-1-1)");
+                                System.out.println("You selected: Automatic redial");
                                 break;
                             case 2:
-                                System.out.println("You selected: Speed dialling (shortcut 6-1-2)");
+                                System.out.println("You selected: Speed dialling");
                                 break;
                             case 3:
-                                System.out.println("You selected: Call waiting options (shortcut 6-1-3)");
+                                System.out.println("You selected: Call waiting options");
                                 break;
                             case 4:
-                                System.out.println("You selected: Own number sending (shortcut 6-1-4)");
+                                System.out.println("You selected: Own number sending");
                                 break;
                             case 5:
-                                System.out.println("You selected: Phone line in use (shortcut 6-1-5)");
+                                System.out.println("You selected: Phone line in use");
                                 break;
                             case 6:
-                                System.out.println("You selected: Automatic answer (shortcut 6-1-6)");
+                                System.out.println("You selected: Automatic answer");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
@@ -419,19 +419,19 @@ public class NokiaMenu {
 
                         switch (choice_6_2) {
                             case 1:
-                                System.out.println("You selected: Language (shortcut 6-2-1)");
+                                System.out.println("You selected: Language");
                                 break;
                             case 2:
-                                System.out.println("You selected: Cell info display (shortcut 6-2-2)");
+                                System.out.println("You selected: Cell info display");
                                 break;
                             case 3:
-                                System.out.println("You selected: Welcome note (shortcut 6-2-3)");
+                                System.out.println("You selected: Welcome note");
                                 break;
                             case 4:
-                                System.out.println("You selected: Network selection (shortcut 6-2-4)");
+                                System.out.println("You selected: Network selection");
                                 break;
                             case 5:
-                                System.out.println("You selected: Confirm SIM service actions (shortcut 6-2-5)");
+                                System.out.println("You selected: Confirm SIM service actions");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
@@ -451,36 +451,36 @@ public class NokiaMenu {
 
                         switch (choice_6_3) {
                             case 1:
-                                System.out.println("You selected: PIN code request (shortcut 6-3-1)");
+                                System.out.println("You selected: PIN code request");
                                 break;
                             case 2:
-                                System.out.println("You selected: Call barring service (shortcut 6-3-2)");
+                                System.out.println("You selected: Call barring service");
                                 break;
                             case 3:
-                                System.out.println("You selected: Fixed dialling (shortcut 6-3-3)");
+                                System.out.println("You selected: Fixed dialling");
                                 break;
                             case 4:
-                                System.out.println("You selected: Closed user group (shortcut 6-3-4)");
+                                System.out.println("You selected: Closed user group");
                                 break;
                             case 5:
-                                System.out.println("You selected: Security level (shortcut 6-3-5)");
+                                System.out.println("You selected: Security level");
                                 break;
                             case 6:
-                                System.out.println("You selected: Change access codes (shortcut 6-3-6)");
+                                System.out.println("You selected: Change access codes");
                                 break;
                             default:
                                 System.out.println("Invalid choice.");
                         }
                         break;
                     case 4:
-                        System.out.println("You selected: Restore factory settings (shortcut 6-4)");
+                        System.out.println("You selected: Restore factory settings");
                         break;
                     default:
                         System.out.println("Invalid choice.");
                 }
                 break;
             case 7:
-                System.out.println("You selected: Call divert (shortcut 7)");
+                System.out.println("You selected: Call divert");
                 break;
             case 8:
                 System.out.println();
@@ -494,29 +494,29 @@ public class NokiaMenu {
 
                 switch (choice_8) {
                     case 1:
-                        System.out.println("You selected: Music player (shortcut 8-1)");
+                        System.out.println("You selected: Music player");
                         break;
                     case 2:
-                        System.out.println("You selected: Radio (shortcut 8-2)");
+                        System.out.println("You selected: Radio");
                         break;
                     case 3:
-                        System.out.println("You selected: Recorder (shortcut 8-3)");
+                        System.out.println("You selected: Recorder");
                         break;
                     case 4:
-                        System.out.println("You selected: Track list (shortcut 8-4)");
+                        System.out.println("You selected: Track list");
                         break;
                     default:
                         System.out.println("Invalid choice.");
                 }
                 break;
             case 9:
-                System.out.println("You selected: Games (shortcut 9)");
+                System.out.println("You selected: Games");
                 break;
             case 10:
-                System.out.println("You selected: Calculator (shortcut 10)");
+                System.out.println("You selected: Calculator");
                 break;
             case 11:
-                System.out.println("You selected: Reminders (shortcut 11)");
+                System.out.println("You selected: Reminders");
                 break;
             case 12:
                 System.out.println();
@@ -532,35 +532,35 @@ public class NokiaMenu {
 
                 switch (choice_12) {
                     case 1:
-                        System.out.println("You selected: Alarm clock (shortcut 12-1)");
+                        System.out.println("You selected: Alarm clock");
                         break;
                     case 2:
-                        System.out.println("You selected: Clock settings (shortcut 12-2)");
+                        System.out.println("You selected: Clock settings");
                         break;
                     case 3:
-                        System.out.println("You selected: Date setting (shortcut 12-3)");
+                        System.out.println("You selected: Date setting");
                         break;
                     case 4:
-                        System.out.println("You selected: Stopwatch (shortcut 12-4)");
+                        System.out.println("You selected: Stopwatch");
                         break;
                     case 5:
-                        System.out.println("You selected: Countdown timer (shortcut 12-5)");
+                        System.out.println("You selected: Countdown timer");
                         break;
                     case 6:
-                        System.out.println("You selected: Auto update of date and time (shortcut 12-6)");
+                        System.out.println("You selected: Auto update of date and time");
                         break;
                     default:
                         System.out.println("Invalid choice.");
                 }
                 break;
             case 13:
-                System.out.println("You selected: Profiles (shortcut 13)");
+                System.out.println("You selected: Profiles");
                 break;
             case 14:
-                System.out.println("You selected: Services (shortcut 14)");
+                System.out.println("You selected: Services");
                 break;
             case 15:
-                System.out.println("You selected: SIM services (shortcut 15)");
+                System.out.println("You selected: SIM services");
                 break;
             default:
                 System.out.println("Invalid choice.");
