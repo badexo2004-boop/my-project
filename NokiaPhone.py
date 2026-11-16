@@ -1,623 +1,570 @@
-# Nokia 5510 menu map
-# - each menu is a while loop, a submenu is a while loop inside it
-# - type the item number like the shortcut keys on the phone
-# - 0 = go back, 99 = leave the menu completely
-# - choices are kept as text so typing letters will not crash it
+import java.util.Scanner;
 
-quit_all = False    # turns True when the user types 99
+public class NokiaMenu {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-print("Welcome to the Nokia 5510 menu.")
-main_choice = ""
-while main_choice != "0" and not quit_all:
-    print()
-    print("==============================")
-    print(" MAIN MENU")
-    print("==============================")
-    print("   1. Phone book ...")
-    print("   2. Messages ...")
-    print("   3. Chat")
-    print("   4. Call register ...")
-    print("   5. Tones ...")
-    print("   6. Settings ...")
-    print("   7. Call divert")
-    print("   8. Music ...")
-    print("   9. Games")
-    print("  10. Calculator")
-    print("  11. Reminders")
-    print("  12. Clock ...")
-    print("  13. Profiles")
-    print("  14. Services")
-    print("  15. SIM services")
-    main_choice = input("Item number (0 = back, 99 = exit): ")
-    if main_choice == "99":
-        quit_all = True
-    elif main_choice == "1":
-        # Phone book
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 1 PHONE BOOK")
-            print("==============================")
-            print("   1. Search")
-            print("   2. Service Nos.")
-            print("   3. Add name")
-            print("   4. Erase")
-            print("   5. Edit")
-            print("   6. Copy")
-            print("   7. Assign tone")
-            print("   8. Send b'card")
-            print("   9. Options ...")
-            print("  10. Speed dials")
-            print("  11. Voice tags")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 == "9":
-                # Options
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 1-9 OPTIONS")
-                    print("==============================")
-                    print("   1. Memory in use")
-                    print("   2. Type of view")
-                    print("   3. Memory status")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "Memory in use"
-                        elif choice3 == "2":
-                            item = "Type of view"
-                        elif choice3 == "3":
-                            item = "Memory status"
-                        if item == "":
-                            print("Enter a number from 0 to 3.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 1-9-{choice3})")
-                            print("(function would run here)")
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "1":
-                    item = "Search"
-                elif choice2 == "2":
-                    item = "Service Nos."
-                elif choice2 == "3":
-                    item = "Add name"
-                elif choice2 == "4":
-                    item = "Erase"
-                elif choice2 == "5":
-                    item = "Edit"
-                elif choice2 == "6":
-                    item = "Copy"
-                elif choice2 == "7":
-                    item = "Assign tone"
-                elif choice2 == "8":
-                    item = "Send b'card"
-                elif choice2 == "10":
-                    item = "Speed dials"
-                elif choice2 == "11":
-                    item = "Voice tags"
-                if item == "":
-                    print("Enter a number from 0 to 11.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 1-{choice2})")
-                    print("(function would run here)")
-    elif main_choice == "2":
-        # Messages
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 2 MESSAGES")
-            print("==============================")
-            print("   1. Write messages")
-            print("   2. Inbox")
-            print("   3. Outbox")
-            print("   4. Picture messages")
-            print("   5. Templates")
-            print("   6. Smileys")
-            print("   7. Message settings ...")
-            print("   8. Info service")
-            print("   9. Voice mailbox number")
-            print("  10. Service command editor")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 == "7":
-                # Message settings
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 2-7 MESSAGE SETTINGS")
-                    print("==============================")
-                    print("   1. Set 1 ...")
-                    print("   2. Common ...")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 == "1":
-                        # Set 1
-                        choice4 = ""
-                        while choice4 != "0" and not quit_all:
-                            print()
-                            print("==============================")
-                            print(" 2-7-1 SET 1")
-                            print("==============================")
-                            print("   1. Message centre number")
-                            print("   2. Messages sent as")
-                            print("   3. Message validity")
-                            choice4 = input("Item number (0 = back, 99 = exit): ")
-                            if choice4 == "99":
-                                quit_all = True
-                            elif choice4 != "0":
-                                item = ""
-                                if choice4 == "1":
-                                    item = "Message centre number"
-                                elif choice4 == "2":
-                                    item = "Messages sent as"
-                                elif choice4 == "3":
-                                    item = "Message validity"
-                                if item == "":
-                                    print("Enter a number from 0 to 3.")
-                                else:
-                                    print()
-                                    print(f"*** {item} ***  (shortcut 2-7-1-{choice4})")
-                                    print("(function would run here)")
-                    elif choice3 == "2":
-                        # Common
-                        choice4 = ""
-                        while choice4 != "0" and not quit_all:
-                            print()
-                            print("==============================")
-                            print(" 2-7-2 COMMON")
-                            print("==============================")
-                            print("   1. Delivery reports")
-                            print("   2. Reply via same centre")
-                            print("   3. Character support")
-                            choice4 = input("Item number (0 = back, 99 = exit): ")
-                            if choice4 == "99":
-                                quit_all = True
-                            elif choice4 != "0":
-                                item = ""
-                                if choice4 == "1":
-                                    item = "Delivery reports"
-                                elif choice4 == "2":
-                                    item = "Reply via same centre"
-                                elif choice4 == "3":
-                                    item = "Character support"
-                                if item == "":
-                                    print("Enter a number from 0 to 3.")
-                                else:
-                                    print()
-                                    print(f"*** {item} ***  (shortcut 2-7-2-{choice4})")
-                                    print("(function would run here)")
-                    elif choice3 != "0":
-                        print("Enter a number from 0 to 2.")
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "1":
-                    item = "Write messages"
-                elif choice2 == "2":
-                    item = "Inbox"
-                elif choice2 == "3":
-                    item = "Outbox"
-                elif choice2 == "4":
-                    item = "Picture messages"
-                elif choice2 == "5":
-                    item = "Templates"
-                elif choice2 == "6":
-                    item = "Smileys"
-                elif choice2 == "8":
-                    item = "Info service"
-                elif choice2 == "9":
-                    item = "Voice mailbox number"
-                elif choice2 == "10":
-                    item = "Service command editor"
-                if item == "":
-                    print("Enter a number from 0 to 10.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 2-{choice2})")
-                    print("(function would run here)")
-    elif main_choice == "4":
-        # Call register
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 4 CALL REGISTER")
-            print("==============================")
-            print("   1. Missed calls")
-            print("   2. Received calls")
-            print("   3. Dialled numbers")
-            print("   4. Erase recent call lists")
-            print("   5. Show call duration ...")
-            print("   6. Show call costs ...")
-            print("   7. Call cost settings ...")
-            print("   8. Prepaid credit")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 == "5":
-                # Show call duration
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 4-5 SHOW CALL DURATION")
-                    print("==============================")
-                    print("   1. Last call duration")
-                    print("   2. All calls' duration")
-                    print("   3. Received calls' duration")
-                    print("   4. Dialled calls' duration")
-                    print("   5. Clear timers")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "Last call duration"
-                        elif choice3 == "2":
-                            item = "All calls' duration"
-                        elif choice3 == "3":
-                            item = "Received calls' duration"
-                        elif choice3 == "4":
-                            item = "Dialled calls' duration"
-                        elif choice3 == "5":
-                            item = "Clear timers"
-                        if item == "":
-                            print("Enter a number from 0 to 5.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 4-5-{choice3})")
-                            print("(function would run here)")
-            elif choice2 == "6":
-                # Show call costs
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 4-6 SHOW CALL COSTS")
-                    print("==============================")
-                    print("   1. Last call cost")
-                    print("   2. All calls' cost")
-                    print("   3. Clear counters")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "Last call cost"
-                        elif choice3 == "2":
-                            item = "All calls' cost"
-                        elif choice3 == "3":
-                            item = "Clear counters"
-                        if item == "":
-                            print("Enter a number from 0 to 3.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 4-6-{choice3})")
-                            print("(function would run here)")
-            elif choice2 == "7":
-                # Call cost settings
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 4-7 CALL COST SETTINGS")
-                    print("==============================")
-                    print("   1. Call cost limit")
-                    print("   2. Show costs in")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "Call cost limit"
-                        elif choice3 == "2":
-                            item = "Show costs in"
-                        if item == "":
-                            print("Enter a number from 0 to 2.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 4-7-{choice3})")
-                            print("(function would run here)")
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "1":
-                    item = "Missed calls"
-                elif choice2 == "2":
-                    item = "Received calls"
-                elif choice2 == "3":
-                    item = "Dialled numbers"
-                elif choice2 == "4":
-                    item = "Erase recent call lists"
-                elif choice2 == "8":
-                    item = "Prepaid credit"
-                if item == "":
-                    print("Enter a number from 0 to 8.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 4-{choice2})")
-                    print("(function would run here)")
-    elif main_choice == "5":
-        # Tones
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 5 TONES")
-            print("==============================")
-            print("   1. Ringing tone")
-            print("   2. Ringing volume")
-            print("   3. Incoming call alert")
-            print("   4. Message alert tone")
-            print("   5. Keypad tones")
-            print("   6. Warning tones")
-            print("   7. Vibrating alert")
-            print("   8. Screen saver")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "1":
-                    item = "Ringing tone"
-                elif choice2 == "2":
-                    item = "Ringing volume"
-                elif choice2 == "3":
-                    item = "Incoming call alert"
-                elif choice2 == "4":
-                    item = "Message alert tone"
-                elif choice2 == "5":
-                    item = "Keypad tones"
-                elif choice2 == "6":
-                    item = "Warning tones"
-                elif choice2 == "7":
-                    item = "Vibrating alert"
-                elif choice2 == "8":
-                    item = "Screen saver"
-                if item == "":
-                    print("Enter a number from 0 to 8.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 5-{choice2})")
-                    print("(function would run here)")
-    elif main_choice == "6":
-        # Settings
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 6 SETTINGS")
-            print("==============================")
-            print("   1. Call settings ...")
-            print("   2. Phone settings ...")
-            print("   3. Security settings ...")
-            print("   4. Restore factory settings")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 == "1":
-                # Call settings
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 6-1 CALL SETTINGS")
-                    print("==============================")
-                    print("   1. Automatic redial")
-                    print("   2. Speed dialling")
-                    print("   3. Call waiting options")
-                    print("   4. Own number sending")
-                    print("   5. Phone line in use")
-                    print("   6. Automatic answer")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "Automatic redial"
-                        elif choice3 == "2":
-                            item = "Speed dialling"
-                        elif choice3 == "3":
-                            item = "Call waiting options"
-                        elif choice3 == "4":
-                            item = "Own number sending"
-                        elif choice3 == "5":
-                            item = "Phone line in use"
-                        elif choice3 == "6":
-                            item = "Automatic answer"
-                        if item == "":
-                            print("Enter a number from 0 to 6.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 6-1-{choice3})")
-                            print("(function would run here)")
-            elif choice2 == "2":
-                # Phone settings
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 6-2 PHONE SETTINGS")
-                    print("==============================")
-                    print("   1. Language")
-                    print("   2. Cell info display")
-                    print("   3. Welcome note")
-                    print("   4. Network selection")
-                    print("   5. Confirm SIM service actions")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "Language"
-                        elif choice3 == "2":
-                            item = "Cell info display"
-                        elif choice3 == "3":
-                            item = "Welcome note"
-                        elif choice3 == "4":
-                            item = "Network selection"
-                        elif choice3 == "5":
-                            item = "Confirm SIM service actions"
-                        if item == "":
-                            print("Enter a number from 0 to 5.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 6-2-{choice3})")
-                            print("(function would run here)")
-            elif choice2 == "3":
-                # Security settings
-                choice3 = ""
-                while choice3 != "0" and not quit_all:
-                    print()
-                    print("==============================")
-                    print(" 6-3 SECURITY SETTINGS")
-                    print("==============================")
-                    print("   1. PIN code request")
-                    print("   2. Call barring service")
-                    print("   3. Fixed dialling")
-                    print("   4. Closed user group")
-                    print("   5. Security level")
-                    print("   6. Change access codes")
-                    choice3 = input("Item number (0 = back, 99 = exit): ")
-                    if choice3 == "99":
-                        quit_all = True
-                    elif choice3 != "0":
-                        item = ""
-                        if choice3 == "1":
-                            item = "PIN code request"
-                        elif choice3 == "2":
-                            item = "Call barring service"
-                        elif choice3 == "3":
-                            item = "Fixed dialling"
-                        elif choice3 == "4":
-                            item = "Closed user group"
-                        elif choice3 == "5":
-                            item = "Security level"
-                        elif choice3 == "6":
-                            item = "Change access codes"
-                        if item == "":
-                            print("Enter a number from 0 to 6.")
-                        else:
-                            print()
-                            print(f"*** {item} ***  (shortcut 6-3-{choice3})")
-                            print("(function would run here)")
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "4":
-                    item = "Restore factory settings"
-                if item == "":
-                    print("Enter a number from 0 to 4.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 6-{choice2})")
-                    print("(function would run here)")
-    elif main_choice == "8":
-        # Music
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 8 MUSIC")
-            print("==============================")
-            print("   1. Music player")
-            print("   2. Radio")
-            print("   3. Recorder")
-            print("   4. Track list")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "1":
-                    item = "Music player"
-                elif choice2 == "2":
-                    item = "Radio"
-                elif choice2 == "3":
-                    item = "Recorder"
-                elif choice2 == "4":
-                    item = "Track list"
-                if item == "":
-                    print("Enter a number from 0 to 4.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 8-{choice2})")
-                    print("(function would run here)")
-    elif main_choice == "12":
-        # Clock
-        choice2 = ""
-        while choice2 != "0" and not quit_all:
-            print()
-            print("==============================")
-            print(" 12 CLOCK")
-            print("==============================")
-            print("   1. Alarm clock")
-            print("   2. Clock settings")
-            print("   3. Date setting")
-            print("   4. Stopwatch")
-            print("   5. Countdown timer")
-            print("   6. Auto update of date and time")
-            choice2 = input("Item number (0 = back, 99 = exit): ")
-            if choice2 == "99":
-                quit_all = True
-            elif choice2 != "0":
-                item = ""
-                if choice2 == "1":
-                    item = "Alarm clock"
-                elif choice2 == "2":
-                    item = "Clock settings"
-                elif choice2 == "3":
-                    item = "Date setting"
-                elif choice2 == "4":
-                    item = "Stopwatch"
-                elif choice2 == "5":
-                    item = "Countdown timer"
-                elif choice2 == "6":
-                    item = "Auto update of date and time"
-                if item == "":
-                    print("Enter a number from 0 to 6.")
-                else:
-                    print()
-                    print(f"*** {item} ***  (shortcut 12-{choice2})")
-                    print("(function would run here)")
-    elif main_choice != "0":
-        item = ""
-        if main_choice == "3":
-            item = "Chat"
-        elif main_choice == "7":
-            item = "Call divert"
-        elif main_choice == "9":
-            item = "Games"
-        elif main_choice == "10":
-            item = "Calculator"
-        elif main_choice == "11":
-            item = "Reminders"
-        elif main_choice == "13":
-            item = "Profiles"
-        elif main_choice == "14":
-            item = "Services"
-        elif main_choice == "15":
-            item = "SIM services"
-        if item == "":
-            print("Enter a number from 0 to 15.")
-        else:
-            print()
-            print(f"*** {item} ***  (shortcut {main_choice})")
-            print("(function would run here)")
+        System.out.println();
+        System.out.println("--- NOKIA 5510 MAIN MENU ---");
+        System.out.println("1. Phone book");
+        System.out.println("2. Messages");
+        System.out.println("3. Chat");
+        System.out.println("4. Call register");
+        System.out.println("5. Tones");
+        System.out.println("6. Settings");
+        System.out.println("7. Call divert");
+        System.out.println("8. Music");
+        System.out.println("9. Games");
+        System.out.println("10. Calculator");
+        System.out.println("11. Reminders");
+        System.out.println("12. Clock");
+        System.out.println("13. Profiles");
+        System.out.println("14. Services");
+        System.out.println("15. SIM services");
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
 
-print("Back to standby mode.")
+        switch (choice) {
+            case 1:
+                System.out.println();
+                System.out.println("--- PHONE BOOK ---");
+                System.out.println("1. Search");
+                System.out.println("2. Service Nos.");
+                System.out.println("3. Add name");
+                System.out.println("4. Erase");
+                System.out.println("5. Edit");
+                System.out.println("6. Copy");
+                System.out.println("7. Assign tone");
+                System.out.println("8. Send b'card");
+                System.out.println("9. Options");
+                System.out.println("10. Speed dials");
+                System.out.println("11. Voice tags");
+                System.out.print("Enter your choice: ");
+                int choice_1 = input.nextInt();
+
+                switch (choice_1) {
+                    case 1:
+                        System.out.println("You selected: Search (shortcut 1-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Service Nos. (shortcut 1-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Add name (shortcut 1-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Erase (shortcut 1-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Edit (shortcut 1-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Copy (shortcut 1-6)");
+                        break;
+                    case 7:
+                        System.out.println("You selected: Assign tone (shortcut 1-7)");
+                        break;
+                    case 8:
+                        System.out.println("You selected: Send b'card (shortcut 1-8)");
+                        break;
+                    case 9:
+                        System.out.println();
+                        System.out.println("--- OPTIONS ---");
+                        System.out.println("1. Memory in use");
+                        System.out.println("2. Type of view");
+                        System.out.println("3. Memory status");
+                        System.out.print("Enter your choice: ");
+                        int choice_1_9 = input.nextInt();
+
+                        switch (choice_1_9) {
+                            case 1:
+                                System.out.println("You selected: Memory in use (shortcut 1-9-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Type of view (shortcut 1-9-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Memory status (shortcut 1-9-3)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 10:
+                        System.out.println("You selected: Speed dials (shortcut 1-10)");
+                        break;
+                    case 11:
+                        System.out.println("You selected: Voice tags (shortcut 1-11)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 2:
+                System.out.println();
+                System.out.println("--- MESSAGES ---");
+                System.out.println("1. Write messages");
+                System.out.println("2. Inbox");
+                System.out.println("3. Outbox");
+                System.out.println("4. Picture messages");
+                System.out.println("5. Templates");
+                System.out.println("6. Smileys");
+                System.out.println("7. Message settings");
+                System.out.println("8. Info service");
+                System.out.println("9. Voice mailbox number");
+                System.out.println("10. Service command editor");
+                System.out.print("Enter your choice: ");
+                int choice_2 = input.nextInt();
+
+                switch (choice_2) {
+                    case 1:
+                        System.out.println("You selected: Write messages (shortcut 2-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Inbox (shortcut 2-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Outbox (shortcut 2-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Picture messages (shortcut 2-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Templates (shortcut 2-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Smileys (shortcut 2-6)");
+                        break;
+                    case 7:
+                        System.out.println();
+                        System.out.println("--- MESSAGE SETTINGS ---");
+                        System.out.println("1. Set 1");
+                        System.out.println("2. Common");
+                        System.out.print("Enter your choice: ");
+                        int choice_2_7 = input.nextInt();
+
+                        switch (choice_2_7) {
+                            case 1:
+                                System.out.println();
+                                System.out.println("--- SET 1 ---");
+                                System.out.println("1. Message centre number");
+                                System.out.println("2. Messages sent as");
+                                System.out.println("3. Message validity");
+                                System.out.print("Enter your choice: ");
+                                int choice_2_7_1 = input.nextInt();
+
+                                switch (choice_2_7_1) {
+                                    case 1:
+                                        System.out.println("You selected: Message centre number (shortcut 2-7-1-1)");
+                                        break;
+                                    case 2:
+                                        System.out.println("You selected: Messages sent as (shortcut 2-7-1-2)");
+                                        break;
+                                    case 3:
+                                        System.out.println("You selected: Message validity (shortcut 2-7-1-3)");
+                                        break;
+                                    default:
+                                        System.out.println("Invalid choice.");
+                                }
+                                break;
+                            case 2:
+                                System.out.println();
+                                System.out.println("--- COMMON ---");
+                                System.out.println("1. Delivery reports");
+                                System.out.println("2. Reply via same centre");
+                                System.out.println("3. Character support");
+                                System.out.print("Enter your choice: ");
+                                int choice_2_7_2 = input.nextInt();
+
+                                switch (choice_2_7_2) {
+                                    case 1:
+                                        System.out.println("You selected: Delivery reports (shortcut 2-7-2-1)");
+                                        break;
+                                    case 2:
+                                        System.out.println("You selected: Reply via same centre (shortcut 2-7-2-2)");
+                                        break;
+                                    case 3:
+                                        System.out.println("You selected: Character support (shortcut 2-7-2-3)");
+                                        break;
+                                    default:
+                                        System.out.println("Invalid choice.");
+                                }
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 8:
+                        System.out.println("You selected: Info service (shortcut 2-8)");
+                        break;
+                    case 9:
+                        System.out.println("You selected: Voice mailbox number (shortcut 2-9)");
+                        break;
+                    case 10:
+                        System.out.println("You selected: Service command editor (shortcut 2-10)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 3:
+                System.out.println("You selected: Chat (shortcut 3)");
+                break;
+            case 4:
+                System.out.println();
+                System.out.println("--- CALL REGISTER ---");
+                System.out.println("1. Missed calls");
+                System.out.println("2. Received calls");
+                System.out.println("3. Dialled numbers");
+                System.out.println("4. Erase recent call lists");
+                System.out.println("5. Show call duration");
+                System.out.println("6. Show call costs");
+                System.out.println("7. Call cost settings");
+                System.out.println("8. Prepaid credit");
+                System.out.print("Enter your choice: ");
+                int choice_4 = input.nextInt();
+
+                switch (choice_4) {
+                    case 1:
+                        System.out.println("You selected: Missed calls (shortcut 4-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Received calls (shortcut 4-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Dialled numbers (shortcut 4-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Erase recent call lists (shortcut 4-4)");
+                        break;
+                    case 5:
+                        System.out.println();
+                        System.out.println("--- SHOW CALL DURATION ---");
+                        System.out.println("1. Last call duration");
+                        System.out.println("2. All calls' duration");
+                        System.out.println("3. Received calls' duration");
+                        System.out.println("4. Dialled calls' duration");
+                        System.out.println("5. Clear timers");
+                        System.out.print("Enter your choice: ");
+                        int choice_4_5 = input.nextInt();
+
+                        switch (choice_4_5) {
+                            case 1:
+                                System.out.println("You selected: Last call duration (shortcut 4-5-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: All calls' duration (shortcut 4-5-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Received calls' duration (shortcut 4-5-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Dialled calls' duration (shortcut 4-5-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Clear timers (shortcut 4-5-5)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 6:
+                        System.out.println();
+                        System.out.println("--- SHOW CALL COSTS ---");
+                        System.out.println("1. Last call cost");
+                        System.out.println("2. All calls' cost");
+                        System.out.println("3. Clear counters");
+                        System.out.print("Enter your choice: ");
+                        int choice_4_6 = input.nextInt();
+
+                        switch (choice_4_6) {
+                            case 1:
+                                System.out.println("You selected: Last call cost (shortcut 4-6-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: All calls' cost (shortcut 4-6-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Clear counters (shortcut 4-6-3)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 7:
+                        System.out.println();
+                        System.out.println("--- CALL COST SETTINGS ---");
+                        System.out.println("1. Call cost limit");
+                        System.out.println("2. Show costs in");
+                        System.out.print("Enter your choice: ");
+                        int choice_4_7 = input.nextInt();
+
+                        switch (choice_4_7) {
+                            case 1:
+                                System.out.println("You selected: Call cost limit (shortcut 4-7-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Show costs in (shortcut 4-7-2)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 8:
+                        System.out.println("You selected: Prepaid credit (shortcut 4-8)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 5:
+                System.out.println();
+                System.out.println("--- TONES ---");
+                System.out.println("1. Ringing tone");
+                System.out.println("2. Ringing volume");
+                System.out.println("3. Incoming call alert");
+                System.out.println("4. Message alert tone");
+                System.out.println("5. Keypad tones");
+                System.out.println("6. Warning tones");
+                System.out.println("7. Vibrating alert");
+                System.out.println("8. Screen saver");
+                System.out.print("Enter your choice: ");
+                int choice_5 = input.nextInt();
+
+                switch (choice_5) {
+                    case 1:
+                        System.out.println("You selected: Ringing tone (shortcut 5-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Ringing volume (shortcut 5-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Incoming call alert (shortcut 5-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Message alert tone (shortcut 5-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Keypad tones (shortcut 5-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Warning tones (shortcut 5-6)");
+                        break;
+                    case 7:
+                        System.out.println("You selected: Vibrating alert (shortcut 5-7)");
+                        break;
+                    case 8:
+                        System.out.println("You selected: Screen saver (shortcut 5-8)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 6:
+                System.out.println();
+                System.out.println("--- SETTINGS ---");
+                System.out.println("1. Call settings");
+                System.out.println("2. Phone settings");
+                System.out.println("3. Security settings");
+                System.out.println("4. Restore factory settings");
+                System.out.print("Enter your choice: ");
+                int choice_6 = input.nextInt();
+
+                switch (choice_6) {
+                    case 1:
+                        System.out.println();
+                        System.out.println("--- CALL SETTINGS ---");
+                        System.out.println("1. Automatic redial");
+                        System.out.println("2. Speed dialling");
+                        System.out.println("3. Call waiting options");
+                        System.out.println("4. Own number sending");
+                        System.out.println("5. Phone line in use");
+                        System.out.println("6. Automatic answer");
+                        System.out.print("Enter your choice: ");
+                        int choice_6_1 = input.nextInt();
+
+                        switch (choice_6_1) {
+                            case 1:
+                                System.out.println("You selected: Automatic redial (shortcut 6-1-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Speed dialling (shortcut 6-1-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Call waiting options (shortcut 6-1-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Own number sending (shortcut 6-1-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Phone line in use (shortcut 6-1-5)");
+                                break;
+                            case 6:
+                                System.out.println("You selected: Automatic answer (shortcut 6-1-6)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 2:
+                        System.out.println();
+                        System.out.println("--- PHONE SETTINGS ---");
+                        System.out.println("1. Language");
+                        System.out.println("2. Cell info display");
+                        System.out.println("3. Welcome note");
+                        System.out.println("4. Network selection");
+                        System.out.println("5. Confirm SIM service actions");
+                        System.out.print("Enter your choice: ");
+                        int choice_6_2 = input.nextInt();
+
+                        switch (choice_6_2) {
+                            case 1:
+                                System.out.println("You selected: Language (shortcut 6-2-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Cell info display (shortcut 6-2-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Welcome note (shortcut 6-2-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Network selection (shortcut 6-2-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Confirm SIM service actions (shortcut 6-2-5)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println();
+                        System.out.println("--- SECURITY SETTINGS ---");
+                        System.out.println("1. PIN code request");
+                        System.out.println("2. Call barring service");
+                        System.out.println("3. Fixed dialling");
+                        System.out.println("4. Closed user group");
+                        System.out.println("5. Security level");
+                        System.out.println("6. Change access codes");
+                        System.out.print("Enter your choice: ");
+                        int choice_6_3 = input.nextInt();
+
+                        switch (choice_6_3) {
+                            case 1:
+                                System.out.println("You selected: PIN code request (shortcut 6-3-1)");
+                                break;
+                            case 2:
+                                System.out.println("You selected: Call barring service (shortcut 6-3-2)");
+                                break;
+                            case 3:
+                                System.out.println("You selected: Fixed dialling (shortcut 6-3-3)");
+                                break;
+                            case 4:
+                                System.out.println("You selected: Closed user group (shortcut 6-3-4)");
+                                break;
+                            case 5:
+                                System.out.println("You selected: Security level (shortcut 6-3-5)");
+                                break;
+                            case 6:
+                                System.out.println("You selected: Change access codes (shortcut 6-3-6)");
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+                        break;
+                    case 4:
+                        System.out.println("You selected: Restore factory settings (shortcut 6-4)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 7:
+                System.out.println("You selected: Call divert (shortcut 7)");
+                break;
+            case 8:
+                System.out.println();
+                System.out.println("--- MUSIC ---");
+                System.out.println("1. Music player");
+                System.out.println("2. Radio");
+                System.out.println("3. Recorder");
+                System.out.println("4. Track list");
+                System.out.print("Enter your choice: ");
+                int choice_8 = input.nextInt();
+
+                switch (choice_8) {
+                    case 1:
+                        System.out.println("You selected: Music player (shortcut 8-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Radio (shortcut 8-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Recorder (shortcut 8-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Track list (shortcut 8-4)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 9:
+                System.out.println("You selected: Games (shortcut 9)");
+                break;
+            case 10:
+                System.out.println("You selected: Calculator (shortcut 10)");
+                break;
+            case 11:
+                System.out.println("You selected: Reminders (shortcut 11)");
+                break;
+            case 12:
+                System.out.println();
+                System.out.println("--- CLOCK ---");
+                System.out.println("1. Alarm clock");
+                System.out.println("2. Clock settings");
+                System.out.println("3. Date setting");
+                System.out.println("4. Stopwatch");
+                System.out.println("5. Countdown timer");
+                System.out.println("6. Auto update of date and time");
+                System.out.print("Enter your choice: ");
+                int choice_12 = input.nextInt();
+
+                switch (choice_12) {
+                    case 1:
+                        System.out.println("You selected: Alarm clock (shortcut 12-1)");
+                        break;
+                    case 2:
+                        System.out.println("You selected: Clock settings (shortcut 12-2)");
+                        break;
+                    case 3:
+                        System.out.println("You selected: Date setting (shortcut 12-3)");
+                        break;
+                    case 4:
+                        System.out.println("You selected: Stopwatch (shortcut 12-4)");
+                        break;
+                    case 5:
+                        System.out.println("You selected: Countdown timer (shortcut 12-5)");
+                        break;
+                    case 6:
+                        System.out.println("You selected: Auto update of date and time (shortcut 12-6)");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            case 13:
+                System.out.println("You selected: Profiles (shortcut 13)");
+                break;
+            case 14:
+                System.out.println("You selected: Services (shortcut 14)");
+                break;
+            case 15:
+                System.out.println("You selected: SIM services (shortcut 15)");
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+
+    }
+}
